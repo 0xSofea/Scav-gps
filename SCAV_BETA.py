@@ -39,7 +39,6 @@ def skipLines(dev):
     raw = dev.readline()
     res = raw.decode('utf-8').strip('\r\n')
     if "Lat:" in res or "Lon:" in res:
-        
         return res.strip("Lat: ").rsplit(' ',1)[0].split(" ")
     else:
         return skipLines(dev)
@@ -64,7 +63,7 @@ while True:
         })
         print(data)
       
-    if 3.52 >= lat <= 3.543500 and 103.427400 >= lon <= 103.427900:         
+    if 3.52 <= lat <= 3.543500 and 103.427400 <= lon <= 103.427900:         
         data = json.dumps({
             'header': 'Canseleri Tun Abdul Razak UMP',
             'subheader': 'Lorem ipsum',
